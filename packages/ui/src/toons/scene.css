@@ -1,0 +1,266 @@
+/* =========================================================================
+   ByteFarm — pixel-art scene matching reference layout.
+   2.5:1 banner aspect; sprite positions/sizes calibrated to the reference.
+   ========================================================================= */
+
+.scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 25 / 10;
+  overflow: hidden;
+  background: #6bb6ff;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+.scene svg {
+  shape-rendering: crispEdges;
+  image-rendering: pixelated;
+  display: block;
+}
+
+/* ---------- Background layers (placeholders) --------------------------- */
+
+.scene__bg-sky {
+  position: absolute;
+  inset: 0 0 26% 0;
+  background: linear-gradient(to bottom, #58b8ff 0%, #82caff 100%);
+  z-index: 1;
+}
+
+.scene__bg-grass {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14%;
+  height: 12%;
+  background: linear-gradient(to bottom, #6dd33b 0%, #4fa524 100%);
+  z-index: 2;
+}
+
+.scene__bg-dirt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14%;
+  background: #5a3a1f;
+  border-top: 4px solid #3a1f0a;
+  z-index: 2;
+}
+
+/* ---------- Logo ------------------------------------------------------- */
+
+.scene__logo {
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  font-family: "Pixelify Sans", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(28px, 7vw, 130px);
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: auto;
+}
+
+.scene__logo-byte,
+.scene__logo-farm {
+  -webkit-text-stroke: 4px #1a1a2e;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 5px 0 #1a1a2e);
+}
+
+.scene__logo-byte {
+  color: #ffffff;
+}
+
+.scene__logo-farm {
+  color: #6dd33b;
+}
+
+.scene__logo-leaf {
+  position: absolute;
+  top: -10%;
+  left: 51%;
+  width: clamp(20px, 3vw, 44px);
+  height: auto;
+  transform: rotate(-12deg);
+  filter: drop-shadow(2px 2px 0 #1a1a2e);
+}
+
+/* ---------- Clouds ----------------------------------------------------- */
+
+.cloud {
+  position: absolute;
+  height: auto;
+  z-index: 10;
+}
+.cloud--1 {
+  top: 8%;
+  left: 3%;
+  width: 8%;
+}
+.cloud--2 {
+  top: 5%;
+  left: 17%;
+  width: 9%;
+}
+.cloud--3 {
+  top: 3%;
+  left: 56%;
+  width: 11%;
+}
+.cloud--4 {
+  top: 11%;
+  left: 78%;
+  width: 9%;
+}
+
+/* ---------- Sprite layer ----------------------------------------------- */
+
+.sprite {
+  position: absolute;
+  height: auto;
+  z-index: 6;
+}
+
+/* All sprites anchor on grass top — share a baseline. */
+
+/* Left grove — TreeOak tall on left, AppleTree just right of it */
+.tree--left {
+  bottom: 26%;
+  left: -1%;
+  width: 16%;
+  z-index: 6;
+}
+.tree--apple {
+  bottom: 26%;
+  left: 9%;
+  width: 9%;
+  z-index: 7;
+}
+
+/* Farm cluster (tight) */
+.barn {
+  bottom: 26%;
+  left: 15%;
+  width: 13%;
+  z-index: 8;
+}
+.silo {
+  bottom: 26%;
+  left: 26%;
+  width: 4.5%;
+  z-index: 7;
+}
+.bush--barn {
+  bottom: 26%;
+  left: 28%;
+  width: 6%;
+  z-index: 9;
+}
+
+/* Pumpkin + sprout */
+.pumpkin--1 {
+  bottom: 26%;
+  left: 32%;
+  width: 3.5%;
+  z-index: 9;
+}
+.sprout--1 {
+  bottom: 26%;
+  left: 35%;
+  width: 3%;
+  z-index: 9;
+}
+
+/* Tractor (slightly smaller, central) */
+.tractor {
+  bottom: 26%;
+  left: 35%;
+  width: 11%;
+  z-index: 10;
+}
+
+/* Corn field (denser) */
+.corn--1 {
+  bottom: 26%;
+  left: 47%;
+  width: 4%;
+  z-index: 8;
+}
+.corn--2 {
+  bottom: 26%;
+  left: 50%;
+  width: 4%;
+  z-index: 8;
+}
+.corn--3 {
+  bottom: 26%;
+  left: 53%;
+  width: 4%;
+  z-index: 8;
+}
+.sunflower--1 {
+  bottom: 26%;
+  left: 55%;
+  width: 3%;
+  z-index: 9;
+}
+.cabbage--1 {
+  bottom: 26%;
+  left: 58%;
+  width: 2.8%;
+  z-index: 9;
+}
+
+/* Fence + animals (overlapped) */
+.fence {
+  bottom: 26%;
+  left: 60%;
+  width: 13%;
+  z-index: 9;
+}
+.cow {
+  bottom: 26%;
+  left: 61%;
+  width: 6%;
+  z-index: 10;
+}
+.pig {
+  bottom: 26%;
+  left: 66%;
+  width: 4.5%;
+  z-index: 10;
+}
+.chicken {
+  bottom: 26%;
+  left: 70%;
+  width: 3.2%;
+  z-index: 10;
+}
+
+/* Right grove + windmill (overlap, taller right tree) */
+.tree--right {
+  bottom: 26%;
+  left: 73%;
+  width: 14%;
+  z-index: 6;
+}
+.windmill {
+  bottom: 26%;
+  left: 83%;
+  width: 12%;
+  z-index: 7;
+}
+.little-guy {
+  bottom: 26%;
+  left: 90%;
+  width: 4.5%;
+  z-index: 11;
+}

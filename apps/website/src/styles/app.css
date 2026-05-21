@@ -1,0 +1,20 @@
+@import "@bytefarm/ui/globals.css";
+@import "@bytefarm/ui/toons/scene.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
