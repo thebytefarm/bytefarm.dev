@@ -13,7 +13,10 @@
     "clean": "rm -rf .output .vercel .turbo .tanstack dist node_modules"
   },
   "dependencies": {
-    "@bytefarm/ui": "workspace:*",
+    "@pxlkit/core": "^1.3.2",
+    "@pxlkit/gamification": "^1.2.3",
+    "@pxlkit/social": "^1.2.3",
+    "@pxlkit/ui-kit": "^1.4.2",
     "@tanstack/react-router": "^1.170.6",
     "@tanstack/react-start": "^1.168.9",
     "react": "^19.2.6",

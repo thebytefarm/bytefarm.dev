@@ -8,19 +8,6 @@
   ],
   "exports": {
     "./globals.css": "./src/styles/globals.css",
-    "./toons/scene.css": "./src/toons/scene.css",
-    "./toons/Scene": {
-      "types": "./src/toons/Scene.tsx",
-      "default": "./src/toons/Scene.tsx"
-    },
-    "./toons/sprites": {
-      "types": "./src/toons/sprites.tsx",
-      "default": "./src/toons/sprites.tsx"
-    },
-    "./toons/sprites/*": {
-      "types": "./src/toons/sprites/*.tsx",
-      "default": "./src/toons/sprites/*.tsx"
-    },
     "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
     "./hooks/*": "./src/hooks/*.ts"

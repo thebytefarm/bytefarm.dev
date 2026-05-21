@@ -1,10 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Scene } from "@bytefarm/ui/toons/Scene";
+import { Hero } from "../components/Hero";
+import { Footer } from "../components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
 
 function Home() {
-  return <Scene />;
+  return (
+    <div className="page">
+      <Hero />
+      <Footer />
+    </div>
+  );
 }
