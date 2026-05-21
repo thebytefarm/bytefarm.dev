@@ -186,7 +186,7 @@ svg {
 
 .footer__link {
   font-family: var(--font-pixel);
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   color: var(--retro-muted);
   text-decoration: none;
   letter-spacing: 0.05em;
@@ -195,6 +195,12 @@ svg {
 
 .footer__link:hover {
   color: var(--retro-text);
+}
+
+.footer__link--icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
 }
 
 @media (max-width: 720px) {
