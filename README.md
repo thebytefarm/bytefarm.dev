@@ -16,8 +16,6 @@ The public homepage for [thebytefarm](https://github.com/thebytefarm) — a litt
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) to run the site locally.
 
-<br>
-
 ## License
 
 [MIT](./LICENSE) © thebytefarm
