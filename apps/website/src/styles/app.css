@@ -39,6 +39,214 @@ svg {
   background-color: var(--retro-bg);
 }
 
+.page--scroll {
+  height: auto;
+  min-height: 100vh;
+}
+
+html:has(.page--scroll),
+html:has(.page--scroll) body {
+  overflow: auto;
+  height: auto;
+}
+
+.mission {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.mission__inner {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.sprout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.sprout__leaves {
+  position: relative;
+  width: 100%;
+  height: 64px;
+}
+
+.sprout__leaf-slot {
+  position: absolute;
+  bottom: 0;
+}
+
+.sprout__leaf-slot--right {
+  left: 50%;
+  width: 64px;
+}
+
+.sprout__leaf-slot--left {
+  right: 50%;
+  width: 44px;
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+
+.sprout__leaf {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+
+.sprout__leaf-slot--right .sprout__leaf {
+  animation: sprout-leaf 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 900ms forwards;
+}
+
+.sprout__leaf-slot--left .sprout__leaf {
+  animation: sprout-leaf 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 1150ms forwards;
+}
+
+.sprout__stem {
+  width: 12px;
+  height: 80px;
+  background-color: #9ecf00;
+  border-left: 4px solid #3a4c00;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  animation: sprout-stem 800ms ease-out 100ms forwards;
+}
+
+.sprout__dirt {
+  display: block;
+  width: 180px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+@keyframes sprout-stem {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes sprout-leaf {
+  to {
+    transform: scale(1);
+  }
+}
+
+.mission__back {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.mission__back-link {
+  text-decoration: none;
+  display: inline-flex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprout__leaf,
+  .sprout__stem {
+    animation: none;
+    transform: scale(1);
+  }
+  .sprout__stem {
+    transform: scaleY(1);
+  }
+}
+
+.mission__divider {
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: -1.25rem;
+}
+
+.mission__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.mission__body p {
+  margin: 0 0 0.75rem;
+  line-height: 1.65;
+}
+
+.mission__body p:last-child {
+  margin-bottom: 0;
+}
+
+.mission__body ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 1.5;
+}
+
+.mission-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+  will-change: transform;
+  border-radius: 4px;
+}
+
+.mission-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 0 0 2px var(--retro-green),
+    0 0 24px 4px
+      var(--retro-shadow-green-lg, color-mix(in srgb, var(--retro-green) 35%, transparent));
+}
+
+.mission-card header {
+  gap: 1rem;
+}
+
+.mission-card h4 {
+  color: var(--retro-green);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+}
+
+.mission-card__icon {
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mission-card:hover .mission-card__icon {
+  transform: scale(1.25) rotate(-10deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-card,
+  .mission-card__icon {
+    transition: none;
+  }
+  .mission-card:hover,
+  .mission-card:hover .mission-card__icon {
+    transform: none;
+  }
+}
+
 .hero {
   flex: 1 1 auto;
   min-height: 0;
@@ -192,6 +400,12 @@ svg {
   opacity: 0.6;
 }
 
+.footer__icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
 @media (max-width: 540px) {
   .footer__inner {
     justify-content: center;
@@ -226,6 +440,13 @@ svg {
   font-size: 0.4375rem;
   line-height: 1;
   opacity: 0.7;
+}
+
+.footer__link--nav {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  line-height: 1;
 }
 
 .footer__link--icon {

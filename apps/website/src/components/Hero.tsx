@@ -49,11 +49,7 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="hero__inner">
-        <img
-          src="/brand/logo.svg"
-          alt="bytefarm"
-          className="hero__logo"
-        />
+        <img src="/brand/logo.svg" alt="bytefarm" className="hero__logo" />
 
         <p className="hero__tagline">
           a little farm growing open source,
@@ -74,14 +70,16 @@ export function Hero() {
               >
                 <PixelCard
                   title={
-                    (isLive ? (
-                      project.name
-                    ) : (
+                    (
                       <span className="project-card__title">
                         <span>{project.name}</span>
-                        <PixelChip label="coming soon" tone="gold" />
+                        {isLive ? (
+                          <PixelChip label="alpha" tone="cyan" />
+                        ) : (
+                          <PixelChip label="coming soon" tone="gold" />
+                        )}
                       </span>
-                    )) as unknown as string
+                    ) as unknown as string
                   }
                   footer={
                     isLive ? (

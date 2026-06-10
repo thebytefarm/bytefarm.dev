@@ -1,0 +1,33 @@
+<svg width="320" height="400" viewBox="0 0 320 400" fill="none" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soil mound -->
+  <rect x="100" y="320" width="120" height="20" fill="#3A4C00"/>
+  <rect x="60" y="340" width="200" height="20" fill="#3A4C00"/>
+  <rect x="80" y="360" width="160" height="20" fill="#3A4C00"/>
+
+  <!-- Stem -->
+  <rect x="140" y="200" width="40" height="120" fill="#9ECF00"/>
+  <rect x="140" y="200" width="20" height="120" fill="#3A4C00"/>
+
+  <!-- Leaf body (light green, symmetric almond) -->
+  <rect x="140" y="60" width="40" height="20" fill="#9ECF00"/>
+  <rect x="120" y="80" width="80" height="20" fill="#9ECF00"/>
+  <rect x="100" y="100" width="120" height="20" fill="#9ECF00"/>
+  <rect x="80" y="120" width="160" height="20" fill="#9ECF00"/>
+  <rect x="100" y="140" width="120" height="20" fill="#9ECF00"/>
+  <rect x="120" y="160" width="80" height="20" fill="#9ECF00"/>
+  <rect x="140" y="180" width="40" height="20" fill="#9ECF00"/>
+
+  <!-- Leaf outline (dark border on left side for depth) -->
+  <rect x="140" y="60" width="20" height="20" fill="#3A4C00"/>
+  <rect x="120" y="80" width="20" height="20" fill="#3A4C00"/>
+  <rect x="100" y="100" width="20" height="20" fill="#3A4C00"/>
+  <rect x="80" y="120" width="20" height="20" fill="#3A4C00"/>
+  <rect x="100" y="140" width="20" height="20" fill="#3A4C00"/>
+  <rect x="120" y="160" width="20" height="20" fill="#3A4C00"/>
+
+  <!-- Leaf vein (dark dotted center line) -->
+  <rect x="150" y="80" width="20" height="10" fill="#3A4C00"/>
+  <rect x="150" y="110" width="20" height="10" fill="#3A4C00"/>
+  <rect x="150" y="140" width="20" height="10" fill="#3A4C00"/>
+  <rect x="150" y="170" width="20" height="10" fill="#3A4C00"/>
+</svg>
