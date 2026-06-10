@@ -1,4 +1,5 @@
 import { PxlKitIcon } from "@pxlkit/core";
+import { PixelDivider } from "@pxlkit/ui-kit";
 import { GithubIcon } from "../lib/github-icon";
 
 const ORG_URL = "https://github.com/thebytefarm";
@@ -8,6 +9,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
+      <PixelDivider spacing="sm" />
       <div className="footer__inner">
         <span className="footer__copyright">© {year} thebytefarm</span>
         <div className="footer__links">
@@ -20,14 +22,12 @@ export function Footer() {
           >
             <PxlKitIcon
               icon={GithubIcon}
-              size={14}
+              size={20}
               color="currentColor"
               aria-label=""
             />
           </a>
-          <span className="footer__dot" aria-hidden="true">
-            ·
-          </span>
+          <span className="footer__sep" aria-hidden="true" />
           <a
             className="footer__link footer__link--muted"
             href={PXLKIT_URL}

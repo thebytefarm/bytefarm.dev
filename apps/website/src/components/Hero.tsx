@@ -1,26 +1,47 @@
-import { PixelDivider } from "@pxlkit/ui-kit";
+import { PixelButton, PixelCard, PixelChip, PixelDivider } from "@pxlkit/ui-kit";
+
+type ProjectStatus = "live" | "coming-soon";
 
 type Project = {
   name: string;
+  description: string;
   logo: string;
   href: string;
+  status: ProjectStatus;
 };
 
 const PROJECTS: Project[] = [
   {
     name: "hopper",
-    logo: "/logos/hopper.png",
+    description:
+      "An IDE built for agents. Plan, run, and review code with your fleet by your side.",
+    logo: "/projects/hopper-logo.svg",
     href: "https://github.com/thebytefarm/hopper",
+    status: "coming-soon",
   },
   {
-    name: "zpress",
-    logo: "/logos/zpress.svg",
-    href: "https://github.com/thebytefarm/zpress",
+    name: "ciderpress",
+    description:
+      "Opinionated docs framework for monorepos. Zero-config — point it at your markdown.",
+    logo: "/projects/ciderpress-logo.svg",
+    href: "https://github.com/thebytefarm/ciderpress",
+    status: "live",
   },
   {
-    name: "kidd",
-    logo: "/logos/kidd.svg",
-    href: "https://github.com/thebytefarm/kidd",
+    name: "maltty",
+    description:
+      "Full-featured CLI framework for Node.js. Prebuilt components and Storybook for the terminal.",
+    logo: "/projects/maltty-logo.svg",
+    href: "https://github.com/thebytefarm/maltty",
+    status: "live",
+  },
+  {
+    name: "marxml",
+    description:
+      "Fast markdown + XML query and mutation. Rust core with JS bindings, built for speed.",
+    logo: "/projects/marxml-logo.svg",
+    href: "https://github.com/thebytefarm/marxml",
+    status: "live",
   },
 ];
 
@@ -29,7 +50,7 @@ export function Hero() {
     <section className="hero">
       <div className="hero__inner">
         <img
-          src="/logos/bytefarm-wordmark.png"
+          src="/brand/logo.svg"
           alt="bytefarm"
           className="hero__logo"
         />
@@ -44,22 +65,54 @@ export function Hero() {
         </div>
 
         <div className="hero__projects" aria-label="Projects">
-          {PROJECTS.map((project) => (
-            <a
-              key={project.name}
-              className="project-card"
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={project.name}
-            >
-              <img
-                src={project.logo}
-                alt={project.name}
-                className="project-card__logo"
-              />
-            </a>
-          ))}
+          {PROJECTS.map((project) => {
+            const isLive = project.status === "live";
+            return (
+              <div
+                key={project.name}
+                className={`project-card${isLive ? "" : " project-card--soon"}`}
+              >
+                <PixelCard
+                  title={
+                    (isLive ? (
+                      project.name
+                    ) : (
+                      <span className="project-card__title">
+                        <span>{project.name}</span>
+                        <PixelChip label="coming soon" tone="gold" />
+                      </span>
+                    )) as unknown as string
+                  }
+                  footer={
+                    isLive ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card__cta"
+                        aria-label={`view ${project.name}`}
+                      >
+                        <PixelButton tone="green" size="sm">
+                          view →
+                        </PixelButton>
+                      </a>
+                    ) : (
+                      <PixelButton tone="green" size="sm" disabled>
+                        view →
+                      </PixelButton>
+                    )
+                  }
+                >
+                  <img
+                    src={project.logo}
+                    alt={`${project.name} logo`}
+                    className="project-card__logo"
+                  />
+                  <p className="project-card__desc">{project.description}</p>
+                </PixelCard>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
