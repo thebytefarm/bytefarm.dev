@@ -266,12 +266,61 @@ html:has(.page--scroll) body {
   text-align: center;
 }
 
+.hero__logo-wrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
 .hero__logo {
   width: auto;
   height: auto;
   max-width: min(420px, 70vw);
   max-height: 30vh;
   image-rendering: pixelated;
+}
+
+.hero__logo-shimmer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 35%,
+    rgba(160, 160, 160, 0.55) 46%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(160, 160, 160, 0.55) 54%,
+    transparent 65%
+  );
+  background-size: 300% 100%;
+  background-position: 160% 0;
+  opacity: 0;
+  -webkit-mask: url("/brand/logo.svg") center / contain no-repeat;
+  mask: url("/brand/logo.svg") center / contain no-repeat;
+  animation: hero-logo-shimmer 3800ms ease-out 100ms 1 forwards;
+}
+
+@keyframes hero-logo-shimmer {
+  0% {
+    background-position: 160% 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    background-position: -60% 0;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__logo-shimmer {
+    animation: none;
+  }
 }
 
 .hero__tagline {

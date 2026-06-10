@@ -49,7 +49,10 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="hero__inner">
-        <img src="/brand/logo.svg" alt="bytefarm" className="hero__logo" />
+        <span className="hero__logo-wrap">
+          <img src="/brand/logo.svg" alt="bytefarm" className="hero__logo" />
+          <span className="hero__logo-shimmer" aria-hidden="true" />
+        </span>
 
         <p className="hero__tagline">
           a little farm growing open source,
