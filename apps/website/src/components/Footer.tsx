@@ -1,5 +1,4 @@
 import { PxlKitIcon } from "@pxlkit/core";
-import { PixelDivider } from "@pxlkit/ui-kit";
 import { GithubIcon } from "../lib/github-icon";
 
 const ORG_URL = "https://github.com/thebytefarm";
@@ -9,7 +8,6 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <PixelDivider spacing="sm" />
       <div className="footer__inner">
         <span className="footer__copyright">© {year} thebytefarm</span>
         <div className="footer__links">

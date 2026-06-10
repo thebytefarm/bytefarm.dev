@@ -160,8 +160,9 @@ svg {
 
 .footer {
   flex: 0 0 auto;
-  padding: 0 1.5rem 0.75rem;
+  padding: 1.25rem 1.5rem;
   background-color: var(--retro-bg);
+  border-top: 2px dotted color-mix(in srgb, var(--retro-border) 40%, transparent);
 }
 
 .footer__inner {
