@@ -1,10 +1,11 @@
-import { PxlKitIcon } from "@pxlkit/core";
+import { addCollection, Icon } from "@iconify/react";
+import { icons as pixelIcons } from "@iconify-json/pixel";
 import { Link } from "@tanstack/react-router";
-import { DiscordIcon } from "../lib/discord-icon";
-import { GithubIcon } from "../lib/github-icon";
+
+addCollection(pixelIcons);
 
 const ORG_URL = "https://github.com/thebytefarm";
-const DISCORD_URL = "#";
+const DISCORD_URL = "https://discord.gg/dk6XfbMm48";
 const PXLKIT_URL = "https://pxlkit.xyz";
 
 export function Footer() {
@@ -22,14 +23,16 @@ export function Footer() {
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <PxlKitIcon icon={GithubIcon} size={20} color="currentColor" aria-label="" />
+              <Icon icon="pixel:github" width={20} height={20} />
             </a>
             <a
               className="footer__link footer__link--icon"
               href={DISCORD_URL}
-              aria-label="Discord (coming soon)"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
             >
-              <PxlKitIcon icon={DiscordIcon} size={20} color="currentColor" aria-label="" />
+              <Icon icon="pixel:discord" width={20} height={20} />
             </a>
           </div>
           <span className="footer__sep" aria-hidden="true" />
