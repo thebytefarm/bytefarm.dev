@@ -40,12 +40,12 @@ function Mission() {
             <MissionSection title="mission" icon={Target}>
               <p>
                 bytefarm is a workshop for open source. small tools, shipped in the open, built for
-                a new kind of developer where agents are at the wheel and terminals are the cockpit.
+                a new kind of developer where you're at the wheel and agents are the engine.
               </p>
               <p>
-                we are betting that the next decade of developer tooling looks less like dashboards
-                and more like terminals. fast feedback loops, composable primitives, and docs that
-                live next to the code. bytefarm exists to build the pieces we wish already existed.
+                we build for the engineers of the next decade: the ones building with agents, and
+                the ones building for them. bytefarm exists to ship the pieces we wish already
+                existed.
               </p>
             </MissionSection>
 
