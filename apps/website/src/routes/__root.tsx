@@ -2,13 +2,15 @@
 import type { ReactNode } from "react";
 import { Outlet, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import appCss from "../styles/app.css?url";
+import { FarmNav } from "~/components/farm-nav";
+import { Footer } from "~/components/Footer";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#1A1411" },
+      { name: "theme-color", content: "#111a12" },
       { title: "ByteFarm" },
       {
         name: "description",
@@ -41,7 +43,13 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <Outlet />
+      <div className="page page--scroll farm-page">
+        <div className="farm-frame">
+          <FarmNav />
+          <Outlet />
+          <Footer />
+        </div>
+      </div>
     </RootDocument>
   );
 }
