@@ -22,7 +22,7 @@ function getInstallOutput(command: string): readonly string[] {
 }
 
 /**
- * Animates an install preview once on entering view, with clipboard feedback.
+ * Animates an install command once on entering view, with clipboard feedback.
  * @param props - Exact command to display and copy.
  * @returns A copyable command with a temporary success state.
  */
@@ -117,7 +117,7 @@ export function InstallCommand({ command }: { command: string }) {
     <div className="project-page__install" ref={terminalRef}>
       <div className="project-page__terminal-bar">
         <span className="project-page__install-title">
-          <SiteIcon name="terminal" size={16} /> install preview
+          <SiteIcon name="terminal" size={16} /> install command
         </span>
         <button
           type="button"
