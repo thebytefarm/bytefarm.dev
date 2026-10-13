@@ -1,0 +1,19 @@
+apps/website/src/styles/app.css
+  s_b594cc9478b078::t_a9648006b13b99 502,513,570,1154-1155
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7fcf371558bbe406897e6f551e509bc417fdeda7",
+  "prompts": {},
+  "sessions": {
+    "s_b594cc9478b078": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ed718d0d9ffezbFbPGXWUQRwzy",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Zac Rosenbauer <me@zrosenbauer.com>"
+    }
+  }
+}
