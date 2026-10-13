@@ -1,15 +1,13 @@
-import { addCollection, Icon } from "@iconify/react";
-import { icons as pixelIcons } from "@iconify-json/pixel";
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
 
-addCollection(pixelIcons);
+import { SiteIcon } from "~/components/site-icon";
 
 const ORG_URL = "https://github.com/thebytefarm";
 const DISCORD_URL = "https://discord.gg/dk6XfbMm48";
-const PXLKIT_URL = "https://pxlkit.xyz";
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const [year] = useState(() => new Date().getFullYear());
   return (
     <footer className="footer">
       <div className="footer__inner">
@@ -23,7 +21,7 @@ export function Footer() {
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <Icon icon="pixel:github" width={20} height={20} />
+              <SiteIcon name="github" />
             </a>
             <a
               className="footer__link footer__link--icon"
@@ -32,22 +30,13 @@ export function Footer() {
               rel="noopener noreferrer"
               aria-label="Discord"
             >
-              <Icon icon="pixel:discord" width={20} height={20} />
+              <SiteIcon name="discord" />
             </a>
           </div>
           <span className="footer__sep" aria-hidden="true" />
-          <Link to="/mission" className="footer__link footer__link--nav">
-            our mission
+          <Link to="/about" className="footer__link footer__link--nav">
+            about
           </Link>
-          <span className="footer__sep" aria-hidden="true" />
-          <a
-            className="footer__link footer__link--muted"
-            href={PXLKIT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Built with pxlkit
-          </a>
         </div>
       </div>
     </footer>

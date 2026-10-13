@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 524" role="img" aria-labelledby="title desc">
+  <title id="title">Marxml byte-preserving update</title>
+  <desc id="desc">The documented updateAttrs example changes task 1.1 from todo to done. The phase, completed task, and surrounding Markdown remain unchanged.</desc>
+  <defs>
+    <style>
+      text { font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace; }
+      .code { font-size: 14px; fill: #a7b9ac; }
+      .label { font-size: 12px; fill: #a7b9ac; }
+      .dim { fill: #738a7c; }
+      .accent { fill: #b9f76b; }
+      .string { fill: #87b994; }
+    </style>
+  </defs>
+  <rect x="1" y="1" width="836" height="522" fill="#030805" stroke="#7dac87" stroke-opacity="0.27" stroke-width="2" />
+  <path d="M1 36H837M419 36V394M1 394H837" stroke="#7dac87" stroke-opacity="0.27" />
+  <text class="label dim" x="419" y="23" text-anchor="middle">plan.md / byte-preserving update</text>
+  <rect x="12" y="50" width="82" height="28" fill="#07100b" />
+  <rect x="431" y="50" width="82" height="28" fill="#07100b" />
+  <text class="label" x="26" y="69">before</text>
+  <text class="label" x="445" y="69">after</text>
+
+  <text class="code" x="26" y="116"># Release plan</text>
+  <text class="code dim" x="26" y="152">Keep the prose unchanged.</text>
+  <text class="code" x="26" y="212">&lt;phase id="1" status="todo"&gt;</text>
+   <text class="code" x="26" y="240" xml:space="preserve">  &lt;task id="1.1" status="<tspan class="string">todo</tspan>" /&gt;</text>
+   <text class="code" x="26" y="268" xml:space="preserve">  &lt;task id="1.2" status="<tspan class="string">done</tspan>" /&gt;</text>
+   <text class="code" x="26" y="296">&lt;/phase&gt;</text>
+
+  <text class="code" x="445" y="116"># Release plan</text>
+  <text class="code dim" x="445" y="152">Keep the prose unchanged.</text>
+  <text class="code" x="445" y="212">&lt;phase id="1" status="todo"&gt;</text>
+   <text class="code" x="445" y="240" xml:space="preserve">  &lt;task id="1.1" status="<tspan class="accent">done</tspan>" /&gt;</text>
+   <text class="code" x="445" y="268" xml:space="preserve">  &lt;task id="1.2" status="<tspan class="string">done</tspan>" /&gt;</text>
+   <text class="code" x="445" y="296">&lt;/phase&gt;</text>
+
+  <text class="label dim" x="26" y="422">selector + surgical update</text>
+  <text class="code" x="26" y="452">doc.<tspan class="accent">updateAttrs</tspan>(<tspan class="string">'task[status="todo"]'</tspan>, [</text>
+  <text class="code" x="26" y="480" xml:space="preserve">  { name: <tspan class="string">'status'</tspan>, value: <tspan class="accent">'done'</tspan> },</text>
+  <text class="code" x="26" y="506">])</text>
+</svg>
