@@ -499,6 +499,7 @@ html:has(.page--scroll) body {
 }
 
 .farm-page {
+  --farm-frame-width: min(1200px, calc(100% - 4rem));
   position: relative;
   isolation: isolate;
   background: var(--retro-shadow);
@@ -509,7 +510,7 @@ html:has(.page--scroll) body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: min(1200px, calc(100% - 4rem));
+  width: var(--farm-frame-width);
   min-height: 100vh;
   margin: 0 auto;
   border-inline: 1px solid var(--retro-border);
@@ -566,9 +567,8 @@ html:has(.page--scroll) body {
 .farm-nav--home {
   position: fixed;
   left: 50%;
-  width: min(1200px, calc(100% - 4rem));
+  width: calc(var(--farm-frame-width) - 2px);
   transform: translateX(-50%);
-  border-inline: 1px solid #dbe5b333;
   transition:
     background-color 180ms ease,
     border-color 180ms ease;
@@ -1151,8 +1151,8 @@ html:has(.page--scroll) body {
 }
 
 @media (max-width: 540px) {
-  .farm-frame {
-    width: calc(100% - 1.5rem);
+  .farm-page {
+    --farm-frame-width: calc(100% - 1.5rem);
   }
   .farm-nav {
     min-height: 76px;
@@ -1172,9 +1172,6 @@ html:has(.page--scroll) body {
   .farm-intro {
     --farm-banner-height: 36rem;
     padding-top: 10rem;
-  }
-  .farm-nav--home {
-    width: calc(100% - 1.5rem);
   }
   .farm-mission,
   .farm-projects,
