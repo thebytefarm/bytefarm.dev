@@ -1,0 +1,38 @@
+apps/website/src/styles/app.css
+  s_b594cc9478b078::t_8abb817ac1971d 294
+  s_b594cc9478b078::t_a31ac5ccfebe74 281-282,291-293,295-296,298
+  s_b594cc9478b078::t_436ac8b25963e9 927-932
+  s_b594cc9478b078::t_79e39048d793eb 821-823
+  s_b594cc9478b078::t_dc69fb4cb89ff1 631-640,1194-1263
+  s_b594cc9478b078::t_01d90be02b517e 299
+  s_b594cc9478b078::t_255ba8b6b9d98d 289-290,300-306
+  s_b594cc9478b078::t_f0d26857b71dfa 307,807-820,824-926,933-937,1264
+  s_b594cc9478b078::t_0d8258cd41e2c1 297,729-730
+  s_b594cc9478b078::t_44a19ae783877d 308
+  s_b594cc9478b078::t_007b5cde48f624 1265
+apps/website/src/components/install-command.tsx
+  s_b594cc9478b078::t_ad94a440f0259d 25,120
+apps/website/src/components/farm-nav.test.tsx
+  s_b594cc9478b078::t_215d539d8846bd 1-8,15-57
+  s_b594cc9478b078::t_f6f683a5fe3e4e 9-14
+apps/website/src/components/farm-nav.tsx
+  s_b594cc9478b078::t_4478e88f932660 64-69,81-95,98-104
+  s_b594cc9478b078::t_dc69fb4cb89ff1 2,14-44,60-61,72-80,96-97,136,146
+  s_b594cc9478b078::t_d469f431efbd9c 105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bba7ee4c986347b54eca2fc6a98946b159a05022",
+  "prompts": {},
+  "sessions": {
+    "s_b594cc9478b078": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_ed718d0d9ffezbFbPGXWUQRwzy",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Zac Rosenbauer <me@zrosenbauer.com>"
+    }
+  }
+}
