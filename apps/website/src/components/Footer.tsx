@@ -34,8 +34,8 @@ export function Footer() {
             </a>
           </div>
           <span className="footer__sep" aria-hidden="true" />
-          <Link to="/mission" className="footer__link footer__link--nav">
-            our mission
+          <Link to="/about" className="footer__link footer__link--nav">
+            about
           </Link>
         </div>
       </div>

@@ -11,14 +11,37 @@ textarea {
   font: inherit;
 }
 
+@font-face {
+  font-family: "Geist Pixel Square";
+  src: url("https://cdn.jsdelivr.net/npm/geist@1.7.2/dist/fonts/geist-pixel/GeistPixel-Square.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("https://cdn.jsdelivr.net/npm/geist@1.7.2/dist/fonts/geist-mono/GeistMono-Variable.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
-  --retro-bg: #111a12;
-  --retro-text: #f5f1de;
-  --retro-muted: #c3ceae;
-  --retro-green: #d7e897;
-  --retro-border: #dbe5b333;
+  --retro-bg: #07100b;
+  --retro-surface: #0d1b12;
+  --retro-surface-hover: #14271b;
+  --retro-shadow: #030805;
+  --retro-text: #e5eee8;
+  --retro-muted: #a4b5a9;
+  --retro-green: #b9f76b;
+  --retro-border: #7dac8745;
   --font-sans: "Inter", sans-serif;
-  --font-pixel: "Press Start 2P", monospace;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-pixel: "Geist Pixel Square", var(--font-mono);
+  --font-heading: var(--font-pixel);
 }
 
 html {
@@ -30,7 +53,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #0d140e;
+  background-color: var(--retro-shadow);
   color: var(--retro-text);
 }
 
@@ -38,6 +61,11 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   overflow: visible;
+}
+
+a {
+  color: var(--retro-green);
+  text-underline-offset: 0.2em;
 }
 
 a,
@@ -51,6 +79,52 @@ svg {
   display: block;
   max-width: 100%;
   height: auto;
+  object-fit: contain;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-synthesis: none;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+}
+
+.site-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.project-technologies {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-technologies li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--retro-muted);
+  font: 0.7rem/1.5 var(--font-mono);
+}
+
+.project-technologies__icon {
+  display: block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
 }
 
@@ -85,15 +159,15 @@ svg {
 
 .ascii-workshop h1 {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .ascii-workshop h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .ascii-workshop h3,
@@ -131,7 +205,7 @@ svg {
 .ascii-workshop button {
   padding: 0.75rem 1rem;
   border: 1px solid var(--retro-border);
-  background: #15230c;
+  background: var(--retro-surface);
   color: var(--retro-green);
   font:
     0.8rem/1.5 ui-monospace,
@@ -355,16 +429,17 @@ html:has(.page--scroll) body {
 
 .mission-card {
   padding: 2rem;
-  border: 1px solid var(--retro-border);
-  background: #101b12;
+  border: 2px solid var(--retro-border);
+  background: var(--retro-surface);
+  box-shadow: 3px 3px 0 var(--retro-shadow);
 }
 
 .mission__heading h1 {
   margin: 0.75rem auto 1.25rem;
   max-width: 20ch;
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
@@ -378,8 +453,8 @@ html:has(.page--scroll) body {
   margin: 0 0 1.25rem;
   color: var(--retro-text);
   font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .hero {
@@ -404,8 +479,8 @@ html:has(.page--scroll) body {
 .farm-page {
   position: relative;
   isolation: isolate;
-  background: #0d140e;
-  color: #f5f1de;
+  background: var(--retro-shadow);
+  color: var(--retro-text);
 }
 
 .farm-frame {
@@ -415,8 +490,9 @@ html:has(.page--scroll) body {
   width: min(1200px, calc(100% - 4rem));
   min-height: 100vh;
   margin: 0 auto;
-  border-inline: 1px solid #dbe5b333;
-  background: #111a12;
+  border-inline: 1px solid var(--retro-border);
+  background: var(--retro-bg);
+  position: relative;
 }
 
 .farm-background {
@@ -425,7 +501,7 @@ html:has(.page--scroll) body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: #111a12;
+  background: var(--retro-bg);
 }
 
 .farm-background__scene {
@@ -453,7 +529,7 @@ html:has(.page--scroll) body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #111a12;
+  background: var(--retro-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -461,7 +537,7 @@ html:has(.page--scroll) body {
   min-height: 92px;
   padding-inline: 2.5rem;
   border-bottom: 1px solid #e2e9bb26;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
 }
 
@@ -487,7 +563,7 @@ html:has(.page--scroll) body {
 }
 
 .farm-nav a {
-  color: #e3e8cf;
+  color: var(--retro-text);
   text-decoration: none;
 }
 
@@ -549,21 +625,17 @@ html:has(.page--scroll) body {
 
 .farm-intro__eyebrow {
   margin: 0;
-  font:
-    0.7rem/1.6 ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    monospace;
+  font: 0.7rem/1.6 var(--font-mono);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #dae5ab;
+  color: var(--retro-muted);
 }
 
 .hero__tagline {
   margin: 0;
   font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.75;
-  color: #f5f1de;
+  color: var(--retro-text);
   text-shadow: 0 2px 12px #0b160d;
 }
 
@@ -574,14 +646,10 @@ html:has(.page--scroll) body {
   margin-top: 0.5rem;
   padding: 0.85rem 1.25rem;
   border: 1px solid #d6ec7b66;
-  background: #15230ccc;
-  color: #e5eeae;
+  background: #0d1b12cc;
+  color: var(--retro-green);
   text-decoration: none;
-  font:
-    0.8rem/1.5 ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    monospace;
+  font: 0.8rem/1.5 var(--font-mono);
 }
 
 .farm-projects {
@@ -603,15 +671,15 @@ html:has(.page--scroll) body {
   margin: 0.75rem 0 0;
   max-width: 20ch;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .farm-mission__body p,
 .farm-build > p:not(.farm-intro__eyebrow) {
   margin: 0 0 1.25rem;
-  color: #c3ceae;
+  color: var(--retro-muted);
   font-size: 1rem;
   line-height: 1.8;
 }
@@ -622,11 +690,7 @@ html:has(.page--scroll) body {
   gap: 1.5rem;
   color: #d7e897;
   text-decoration: none;
-  font:
-    0.8rem/1.5 ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    monospace;
+  font: 0.8rem/1.5 var(--font-mono);
 }
 
 .farm-build {
@@ -643,6 +707,80 @@ html:has(.page--scroll) body {
   margin: 0;
 }
 
+.farm-build__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.farm-build__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid #b9f76b;
+  border-radius: 0;
+  background: #b9f76b;
+  color: #152019;
+  font: 600 0.85rem/1.5 var(--font-sans);
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.farm-build__button:hover {
+  border-color: #d5ff9f;
+  background: #d5ff9f;
+}
+
+.farm-build__button--secondary {
+  border-color: #91b59b66;
+  background: transparent;
+  color: var(--retro-text);
+}
+
+.farm-build__button--secondary:hover {
+  border-color: #91b59b99;
+  background: var(--retro-surface-hover);
+}
+
+.farm-build__button:focus-visible {
+  outline: 2px solid #b9f76b;
+  outline-offset: 3px;
+}
+
+.farm-page :is(button, .farm-intro__cta, .farm-build__button, .project-page__cta) {
+  border-width: 2px;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--retro-shadow);
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.farm-page
+  :is(button, .farm-intro__cta, .farm-build__button, .project-page__cta):active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--retro-shadow);
+}
+
+.farm-page .project-page__copy {
+  border-width: 1px;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .farm-page :is(button, .farm-intro__cta, .farm-build__button, .project-page__cta) {
+    transition: none;
+  }
+}
+
 .farm-projects__heading {
   display: flex;
   justify-content: space-between;
@@ -654,14 +792,14 @@ html:has(.page--scroll) body {
 .farm-projects h2 {
   margin: 0.5rem 0 0;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .hero__projects {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .project-card {
@@ -948,14 +1086,14 @@ html:has(.page--scroll) body {
 }
 
 .footer__copyright {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.05em;
   color: var(--retro-muted);
 }
 
 .footer__link {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--retro-muted);
   text-decoration: none;

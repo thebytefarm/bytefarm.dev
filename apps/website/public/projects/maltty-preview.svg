@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 524" role="img" aria-labelledby="title desc">
+  <title id="title">Maltty terminal and command example</title>
+  <desc id="desc">A terminal running maltty dev beside a typed deploy command, adapted from the Maltty README banner.</desc>
+  <defs>
+    <style>
+      .text { font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace; }
+      .code { font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace; font-size: 14px; }
+      .tab { font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace; font-size: 12px; fill: #a7b9ac; }
+      .brand { fill: #b9f76b; }
+      .dim { fill: #738a7c; }
+      .kw { fill: #a7b9ac; }
+      .fn { fill: #b9f76b; }
+      .st { fill: #87b994; }
+      .pr { fill: #a7b9ac; }
+      .vr { fill: #a7b9ac; }
+      .tx { fill: #a7b9ac; }
+      .op { fill: #738a7c; }
+      .prompt { fill: #b9f76b; }
+    </style>
+  </defs>
+
+  <!-- Terminal and command panels adapted from the original README banner. -->
+  <rect x="1" y="1" width="836" height="522" fill="#030805" stroke="#7dac87" stroke-opacity="0.27" stroke-width="2" />
+  <path d="M1 36H837" stroke="#7dac87" stroke-opacity="0.27" />
+  <text class="text dim" font-size="12" x="419" y="22" text-anchor="middle">terminal / commands/deploy.ts</text>
+  <line x1="419" y1="36" x2="419" y2="524" stroke="#7dac87" stroke-opacity="0.27" />
+
+  <rect x="12" y="50" width="94" height="28" fill="#07100b" />
+  <text class="tab" x="26" y="69">terminal</text>
+  <text class="code" x="26" y="112"><tspan class="prompt">~</tspan><tspan class="dim"> $ </tspan><tspan class="tx">maltty dev</tspan></text>
+  <text class="code" x="26" y="164"><tspan class="dim">Starting </tspan><tspan class="brand">my-cli</tspan><tspan class="dim">...</tspan></text>
+  <text class="code" x="26" y="204" xml:space="preserve"><tspan class="st">  ✓</tspan><tspan class="tx"> Loaded config</tspan></text>
+  <text class="code" x="26" y="238" xml:space="preserve"><tspan class="st">  ✓</tspan><tspan class="tx"> Registered 3 commands</tspan></text>
+  <text class="code" x="26" y="272" xml:space="preserve"><tspan class="st">  ✓</tspan><tspan class="tx"> Applied 2 middleware</tspan></text>
+  <text class="code" x="26" y="306" xml:space="preserve"><tspan class="st">  ✓</tspan><tspan class="tx"> Watching for changes</tspan></text>
+  <text class="code dim" x="26" y="366">Ready — watching your commands</text>
+  <text class="code" x="26" y="442"><tspan class="prompt">~</tspan><tspan class="dim"> $ </tspan><tspan class="tx">&#x2588;</tspan></text>
+
+  <rect x="431" y="50" width="184" height="28" fill="#07100b" />
+  <text class="tab" x="445" y="69">commands/deploy.ts</text>
+  <text class="code" x="445" y="112" xml:space="preserve"><tspan class="kw">import</tspan><tspan class="op"> { </tspan><tspan class="fn">command</tspan><tspan class="op"> } </tspan><tspan class="kw">from</tspan><tspan class="st"> 'maltty'</tspan></text>
+  <text class="code" x="445" y="140" xml:space="preserve"><tspan class="kw">import</tspan><tspan class="op"> { </tspan><tspan class="fn">z</tspan><tspan class="op"> } </tspan><tspan class="kw">from</tspan><tspan class="st"> 'zod'</tspan></text>
+  <text class="code" x="445" y="196" xml:space="preserve"><tspan class="kw">export default </tspan><tspan class="fn">command</tspan><tspan class="op">({</tspan></text>
+  <text class="code" x="445" y="224" xml:space="preserve"><tspan class="op">  </tspan><tspan class="pr">description</tspan><tspan class="op">: </tspan><tspan class="st">'Deploy the app'</tspan><tspan class="op">,</tspan></text>
+  <text class="code" x="445" y="252" xml:space="preserve"><tspan class="op">  </tspan><tspan class="pr">args</tspan><tspan class="op">: </tspan><tspan class="fn">z</tspan><tspan class="op">.</tspan><tspan class="fn">object</tspan><tspan class="op">({</tspan></text>
+  <text class="code" x="445" y="280" xml:space="preserve"><tspan class="op">    </tspan><tspan class="pr">tag</tspan><tspan class="op">: </tspan><tspan class="fn">z</tspan><tspan class="op">.</tspan><tspan class="fn">string</tspan><tspan class="op">(),</tspan></text>
+  <text class="code op" x="445" y="308" xml:space="preserve">  }),</text>
+  <text class="code" x="445" y="336" xml:space="preserve"><tspan class="op">  </tspan><tspan class="pr">handler</tspan><tspan class="op">: </tspan><tspan class="kw">async</tspan><tspan class="op"> (</tspan><tspan class="vr">ctx</tspan><tspan class="op">) =&gt; {</tspan></text>
+   <text class="code" x="445" y="364" xml:space="preserve"><tspan class="op">    </tspan><tspan class="vr">ctx</tspan><tspan class="op">.</tspan><tspan class="pr">log</tspan><tspan class="op">.</tspan><tspan class="fn">info</tspan><tspan class="op">(</tspan><tspan class="vr">ctx</tspan><tspan class="op">.</tspan><tspan class="pr">args</tspan><tspan class="op">.</tspan><tspan class="pr">tag</tspan><tspan class="op">)</tspan></text>
+   <text class="code op" x="445" y="392" xml:space="preserve">  },</text>
+   <text class="code op" x="445" y="420">})</text>
+</svg>

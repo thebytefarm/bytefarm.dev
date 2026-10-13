@@ -5,7 +5,7 @@ import { SiteIcon } from "~/components/site-icon";
 
 /**
  * Renders the shared navigation for ByteFarm pages.
- * @returns Home, project, mission, and community links.
+ * @returns Home, project, about, and community links.
  */
 export function FarmNav() {
   const pathname = useLocation({ select: (location) => location.pathname });
@@ -33,10 +33,28 @@ export function FarmNav() {
         <img src="/brand/logo.svg" alt="ByteFarm" width={160} height={41} />
       </Link>
       <div className="farm-nav__links">
-        <Link to="/" hash="projects">
+        <Link
+          to="/"
+          hash="projects"
+          hashScrollIntoView={{ behavior: "auto", block: "start" }}
+          onClick={(event) => {
+            if (!isHome || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            const projects = document.getElementById("projects");
+            if (!projects) return;
+            event.preventDefault();
+            const navHeight =
+              document.querySelector(".farm-nav")?.getBoundingClientRect().height ?? 92;
+            window.scrollTo({
+              top: projects.getBoundingClientRect().top + window.scrollY - navHeight - 24,
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                ? "instant"
+                : "smooth",
+            });
+          }}
+        >
           projects
         </Link>
-        <Link to="/mission">our mission</Link>
+        <Link to="/about">about</Link>
         <div className="farm-nav__community">
           <a
             href="https://github.com/thebytefarm"

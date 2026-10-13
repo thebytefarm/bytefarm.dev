@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 524" role="img" aria-labelledby="title desc">
+  <title id="title">Almanac managed documentation index</title>
+  <desc id="desc">The documented sync command indexes an authentication document inside the docs-index region of AGENTS.md. Human-authored instructions stay outside the managed boundary, and check verifies the index without writing files.</desc>
+  <defs>
+    <style>
+      text { font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace; }
+      .code { font-size: 14px; fill: #a7b9ac; }
+      .label { font-size: 12px; fill: #a7b9ac; }
+      .dim { fill: #738a7c; }
+      .accent { fill: #b9f76b; }
+    </style>
+  </defs>
+  <rect x="1" y="1" width="836" height="522" fill="#030805" stroke="#7dac87" stroke-opacity="0.27" stroke-width="2" />
+  <path d="M1 36H837M419 36V523" stroke="#7dac87" stroke-opacity="0.27" />
+  <text class="label dim" x="419" y="23" text-anchor="middle">terminal / AGENTS.md</text>
+  <rect x="12" y="50" width="94" height="28" fill="#07100b" />
+  <rect x="431" y="50" width="108" height="28" fill="#07100b" />
+  <text class="label" x="26" y="69">terminal</text>
+  <text class="label" x="445" y="69">AGENTS.md</text>
+
+   <text class="code accent" x="26" y="116">$ almanac sync</text>
+  <text class="label dim" x="26" y="174">Git-tracked documentation</text>
+  <text class="code" x="26" y="210">docs/auth.md</text>
+  <text class="code dim" x="26" y="242">Token lifecycle and refresh</text>
+  <text class="code dim" x="26" y="270">semantics.</text>
+  <path d="M32 300V336H94M88 330L94 336L88 342" fill="none" stroke="#738a7c" stroke-width="2" />
+  <text class="code accent" x="110" y="341">AGENTS.md</text>
+   <text class="code accent" x="26" y="426">$ almanac check</text>
+  <text class="label dim" x="26" y="460">Read-only CI verification</text>
+
+  <text class="code" x="445" y="116"># Repository instructions</text>
+  <text class="code dim" x="445" y="158">Human-authored rules stay here.</text>
+  <text class="code accent" x="445" y="222">&lt;docs-index&gt;</text>
+   <text class="code" x="445" y="250">docs/auth.md: Token lifecycle</text>
+   <text class="code" x="445" y="278">and refresh semantics.</text>
+   <text class="code accent" x="445" y="306">&lt;/docs-index&gt;</text>
+  <text class="label dim" x="445" y="460">Only the managed region changes</text>
+</svg>

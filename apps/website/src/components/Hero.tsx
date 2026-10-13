@@ -1,67 +1,12 @@
 import { Link } from "@tanstack/react-router";
 
 import { FarmBackground } from "~/components/farm-background";
+import { ProjectCard } from "~/components/project-card";
+import { SiteIcon } from "~/components/site-icon";
+import type { ProjectGithub } from "~/components/project-github";
+import { PROJECTS } from "~/components/projects";
 
-type ProjectStatus = "open source" | "in development" | "coming soon";
-
-type Project = {
-  name: string;
-  description: string;
-  logo?: string;
-  href?: string;
-  status: ProjectStatus;
-};
-
-const PROJECTS: Project[] = [
-  {
-    name: "ciderpress",
-    description:
-      "Opinionated docs framework for monorepos. Zero-config — point it at your markdown.",
-    logo: "/projects/ciderpress-logo.svg",
-    href: "https://github.com/thebytefarm/ciderpress",
-    status: "open source",
-  },
-  {
-    name: "maltty",
-    description:
-      "Full-featured CLI framework for Node.js. Prebuilt components and Storybook for the terminal.",
-    logo: "/projects/maltty-logo.svg",
-    href: "https://github.com/thebytefarm/maltty",
-    status: "open source",
-  },
-  {
-    name: "marxml",
-    description:
-      "Fast markdown + XML query and mutation. Rust core with JS bindings, built for speed.",
-    logo: "/projects/marxml-logo.svg",
-    href: "https://github.com/thebytefarm/marxml",
-    status: "open source",
-  },
-  {
-    name: "almanac",
-    description:
-      "A Git-aware index that keeps repository documentation discoverable to coding agents.",
-    logo: "/projects/almanac-logo.svg",
-    href: "https://github.com/thebytefarm/almanac",
-    status: "open source",
-  },
-  {
-    name: "hopper",
-    description:
-      "An IDE built for agents. Plan, run, and review code with your fleet by your side.",
-    logo: "/projects/hopper-logo.svg",
-    href: "https://github.com/thebytefarm/hopper",
-    status: "coming soon",
-  },
-  {
-    name: "granary",
-    description:
-      "Create and install context packs for coding agents. Package docs, coding standards, and project context so your tools have what they need.",
-    status: "in development",
-  },
-];
-
-export function Hero() {
+export function Hero({ github }: { github: Record<string, ProjectGithub | null> }) {
   return (
     <main className="hero" id="top">
       <div className="hero__inner">
@@ -96,8 +41,8 @@ export function Hero() {
               From your terminal to your IDE, we’re growing the pieces we wish already existed.
               Small, opinionated, and open source by default.
             </p>
-            <Link to="/mission" className="farm-section__cta">
-              read our mission <span aria-hidden="true">→</span>
+            <Link to="/about" className="farm-section__cta">
+              about the farm <SiteIcon name="arrow-right" size={18} />
             </Link>
           </div>
         </section>
@@ -105,61 +50,14 @@ export function Hero() {
         <section className="farm-projects" id="projects" aria-labelledby="projects-title">
           <div className="farm-projects__heading">
             <div>
-              <p className="farm-intro__eyebrow">from the field</p>
+              <p className="farm-intro__eyebrow">our projects</p>
               <h2 id="projects-title">what we’re growing</h2>
             </div>
           </div>
           <div className="hero__projects" aria-label="Projects">
-            {PROJECTS.map((project) => {
-              const isLive = project.status !== "coming soon" && Boolean(project.href);
-              const content = (
-                <>
-                  <div className="project-card__title">
-                    <span
-                      className={`project-card__status${isLive ? "" : " project-card__status--soon"}`}
-                    >
-                      {project.status}
-                    </span>
-                    <span aria-hidden="true">{isLive ? "↗" : "—"}</span>
-                  </div>
-                  {project.logo ? (
-                    <img
-                      src={project.logo}
-                      alt={project.name}
-                      className="project-card__logo"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span className="project-card__wordmark">{project.name}</span>
-                  )}
-                  <h3 className="sr-only">{project.name}</h3>
-                  <p className="project-card__desc">{project.description}</p>
-                  <span className="project-card__cta">
-                    {isLive ? "explore project →" : "still growing"}
-                  </span>
-                </>
-              );
-              return (
-                <article
-                  key={project.name}
-                  className={`project-card${isLive ? "" : " project-card--soon"}`}
-                >
-                  {isLive ? (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-card__body"
-                      aria-label={`Explore ${project.name}`}
-                    >
-                      {content}
-                    </a>
-                  ) : (
-                    <div className="project-card__body">{content}</div>
-                  )}
-                </article>
-              );
-            })}
+            {PROJECTS.map((project) => (
+              <ProjectCard key={project.slug} project={project} github={github[project.slug]} />
+            ))}
           </div>
         </section>
 
@@ -167,17 +65,27 @@ export function Hero() {
           <p className="farm-intro__eyebrow">built in the open</p>
           <h2 id="build-title">grow something with us.</h2>
           <p>
-            Use the tools. Read the source. Tell us what’s missing. The next useful piece starts
-            with someone trying to build something.
+            Explore the code on GitHub, or join us on Discord to ask questions, share feedback, and
+            show us what you're building.
           </p>
-          <a
-            href="https://github.com/thebytefarm"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="farm-section__cta"
-          >
-            join us on GitHub <span aria-hidden="true">↗</span>
-          </a>
+          <div className="farm-build__actions">
+            <a
+              href="https://github.com/thebytefarm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="farm-build__button"
+            >
+              <SiteIcon name="github" size={20} /> Visit our GitHub
+            </a>
+            <a
+              href="https://discord.gg/dk6XfbMm48"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="farm-build__button farm-build__button--secondary"
+            >
+              <SiteIcon name="discord" size={20} /> Join on Discord
+            </a>
+          </div>
         </section>
       </div>
     </main>
